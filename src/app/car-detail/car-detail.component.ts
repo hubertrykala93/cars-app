@@ -27,7 +27,7 @@ export class CarDetailComponent implements OnInit {
     if (this.car && this.newService.part && this.newService.cost > 0) {
       this.carService.addServiceToCar(this.car.id, this.newService);
       this.newService = { part: '', cost: 0 };
-      this.car = this.carService.getCarById(this.car.id!);  // refresh car details
+      this.car = this.carService.getCarById(this.car.id!);
     }
   }
 }

@@ -1,6 +1,33 @@
-<div *ngIf="cars.length === 0">No cars available</div>
+<h1>Car List</h1>
+
+<div *ngIf="cars.length === 0">No cars available.</div>
 <ul *ngIf="cars.length > 0">
   <li *ngFor="let car of cars">
     <a [routerLink]="['/car', car.id]">{{ car.make }} {{ car.model }} ({{ car.year }})</a>
   </li>
 </ul>
+
+<h2>Add a New Car</h2>
+<form (ngSubmit)="addCar()">
+  <div>
+    <label for="make">Make:</label>
+    <input id="make" [(ngModel)]="newCar.make" name="make" required />
+  </div>
+  <div>
+    <label for="model">Model:</label>
+    <input id="model" [(ngModel)]="newCar.model" name="model" required />
+  </div>
+  <div>
+    <label for="year">Year:</label>
+    <input
+      id="year"
+      type="number"
+      [(ngModel)]="newCar.year"
+      name="year"
+      required
+      min="1900"
+      [max]="currentYear"
+    />
+  </div>
+  <button type="submit">Add Car</button>
+</form>

@@ -7,7 +7,7 @@ export interface Service {
     id: string;
     make: string;
     model: string;
-    year: number;
+    year?: number;
     services: Service[];
   }
   
