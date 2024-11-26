@@ -1,0 +1,6 @@
+<div *ngIf="cars.length === 0">No cars available</div>
+<ul *ngIf="cars.length > 0">
+  <li *ngFor="let car of cars">
+    <a [routerLink]="['/car', car.id]">{{ car.make }} {{ car.model }} ({{ car.year }})</a>
+  </li>
+</ul>

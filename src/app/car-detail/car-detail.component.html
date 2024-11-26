@@ -1,0 +1,20 @@
+<div *ngIf="car">
+    <h2>{{ car.make }} {{ car.model }} ({{ car.year }})</h2>
+  
+    <div>
+      <h3>Services</h3>
+      <ul>
+        <li *ngFor="let service of car.services">
+          Part: {{ service.part }} - Cost: {{ service.cost | currency }}
+        </li>
+      </ul>
+  
+      <div>
+        <h3>Add Service</h3>
+        <input [(ngModel)]="newService.part" placeholder="Part" />
+        <input [(ngModel)]="newService.cost" type="number" placeholder="Cost" />
+        <button (click)="addService()">Add Service</button>
+      </div>
+    </div>
+  </div>
+  
