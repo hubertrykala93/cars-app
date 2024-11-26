@@ -3,7 +3,7 @@
 To set up the cars-app locally, follow these steps:
 
 ```bash
-git clone https://github.com/hubertrykala93/pokemon-app.git
+git clone https://github.com/hubertrykala93/cars-app.git
 cd pokemon-app
 ```
 
